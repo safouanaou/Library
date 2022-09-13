@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <div class="addinfo">
+        <p>Add New Book</p>
+        <fieldset>
+            <div>
+            <label for="book" id="booktitle"></label>
+            <input type="text" name="book" id="addbooktitle" placeholder="Title">
+            </div>
+            <div>
+            <label for="author" id="authorname"></label>
+            <input type="text" name="author" id="addauthorname" placeholder="Author">
+            </div>
+            <div>
+            <label for="pages" id="pages"></label>
+            <input type="text" name="pages" id="addpages" placeholder="Pages">
+            </div>
+            <div class="check">
+            <label for="read" id="readit">Have you read it?</label>
+            <input type="checkbox">
+            </div>
+            <button>Submit</button>
+        </fieldset>
+    </div>
+    <div class="background"></div>
+    <header>
+        <h2>library</h2>
+    </header>
+    <section>
+        <button class="add">+ Add Book</button>
+        <div class="content">
+            <div class="book book-1">
+                <p>a short history of nearly everything</p>
+                <p>sfrer</p>
+                <p>332</p>
+                <button>read</button>
+                <button>remove</button>
+            </div>
+            <div class="book book-2">
+                <p>the selfish gene</p>
+                <p>sfrer</p>
+                <p>332</p>
+                <button>read</button>
+                <button>remove</button>
+            </div>
+            <div class="book book-3">
+                <p>the war on the west</p>
+                <p>sfrer</p>
+                <p>332</p>
+                <button class="read">read</button>
+                <button class="remove">remove</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
