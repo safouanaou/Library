@@ -4,7 +4,7 @@ const addBook = document.querySelector('.add');
 const input = document.querySelectorAll('input');
 const addInfo = document.querySelector('.addinfo');
 const body = document.querySelector('body');
-const backgroud = document.querySelector('.background');
+const background = document.querySelector('.background');
 const section = document.querySelector('section');
 const addBookForm = document.forms['form'];
 const content = document.querySelector('.content');
@@ -39,6 +39,11 @@ class Book {
     }
 
   
+    function ConfirmDelete()
+{
+  return confirm("Are you sure you want to delete?");
+}
+
     function displayBookInLibrary(){
 
         const isRead = addBookForm.querySelector('#checkbox').checked;
@@ -59,10 +64,12 @@ class Book {
                 read.style.background = '#98FB98'
             }else{
                 read.innerText = 'Not Read'
-                read.style.background = 'red';
+                read.style.background = 'rgb(227, 220, 206)';
             }
             const remove = document.createElement('button');
-            remove.className = 'book-button';
+            const removeClass = remove.classList;
+            removeClass.add('book-button')
+            removeClass.add('remove')
             remove.innerText = 'Remove';
 
             titlePar.innerText = lib.title;
@@ -78,12 +85,16 @@ class Book {
             content.appendChild(bookDiv);
             
             remove.addEventListener('click', ()=>{
-                bookDiv.remove();
+                if(ConfirmDelete() === true){
+                    bookDiv.remove();
+                }else{
+                    return
+                }
             })
 
             read.addEventListener('click', ()=>{
                 if(lib.read === true){
-                    read.style.background = 'red';
+                    read.style.background = 'rgb(227, 220, 206)';
                     read.innerText = 'Not Read'
                     lib.read = false;
 
@@ -118,15 +129,15 @@ class Book {
 function openAddBookWindow(){
     addBook.addEventListener('click', (e)=>{
         addInfo.style.display = 'flex';
-        backgroud.style.display = 'flex';
+        background.style.display = 'flex';
         section.style.zIndex = '-3';
         e.stopPropagation();
         
     
         document.addEventListener('click', (e)=>{
-            if(e.target === body){
+            if(e.target === body || e.target === background){
                 addInfo.style.display = 'none';
-                backgroud.style.display = 'none';
+                background.style.display = 'none';
                 section.style.zIndex = '0';
                 reset();
             }else{
@@ -137,7 +148,6 @@ function openAddBookWindow(){
     })
 } 
 openAddBookWindow();
-
 
 
 

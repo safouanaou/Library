@@ -59,7 +59,7 @@ section{
 }
 
 .book{
-    padding: 20px 100px;
+    padding: 50px 100px;
     border-radius: 11px;
     box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.273);
     width: 500px;
@@ -69,20 +69,20 @@ section{
     align-items: center;
     font-size: 2rem;
     font-weight: 500;
-    word-break:keep-all;
+    word-break: keep-all;
+    line-break:normal;
     background: white;
     text-transform: capitalize;
     text-align: center;
 }
 
 .book>p{
-    
+    text-transform: capitalize;
 }
 
 .book *{
-    margin-bottom: 30px;
-    border-bottom: 3px solid black;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 3px;
 }
 
 .book-button{
@@ -90,12 +90,13 @@ section{
     width: 400px;
     height: 60px;
     border: none;
-    background: rgb(227, 220, 206);
     border-radius: 10px;
     font-size: 1.5rem;
     text-transform: capitalize;
     font-weight: 600;  
     cursor: pointer;  
+    margin-bottom: 20px !important;
+
 }
 
 .addinfo{
@@ -160,4 +161,25 @@ form button{
     background: rgba(0, 0, 0, 0.5);
 }
 
+.check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
 
+#readit{
+    font-size: 1.4rem;
+}
+
+#checkbox{
+    position: absolute;
+    right: 10%;
+    top: -12px;
+    width: 20px;
+}
+
+.remove{
+    background: tomato;
+}
