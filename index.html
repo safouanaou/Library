@@ -11,7 +11,7 @@
 <body>
     <div class="addinfo">
         <p>Add New Book</p>
-        <fieldset>
+        <form id="form">
             <div>
             <label for="book" id="booktitle"></label>
             <input type="text" name="book" id="addbooktitle" placeholder="Title">
@@ -26,10 +26,10 @@
             </div>
             <div class="check">
             <label for="read" id="readit">Have you read it?</label>
-            <input type="checkbox">
+            <input type="checkbox" id="checkbox">
             </div>
-            <button>Submit</button>
-        </fieldset>
+            <button type="submit" id="submit">Submit</button>
+        </form>
     </div>
     <div class="background"></div>
     <header>
@@ -37,28 +37,9 @@
     </header>
     <section>
         <button class="add">+ Add Book</button>
+
         <div class="content">
-            <div class="book book-1">
-                <p>a short history of nearly everything</p>
-                <p>sfrer</p>
-                <p>332</p>
-                <button>read</button>
-                <button>remove</button>
-            </div>
-            <div class="book book-2">
-                <p>the selfish gene</p>
-                <p>sfrer</p>
-                <p>332</p>
-                <button>read</button>
-                <button>remove</button>
-            </div>
-            <div class="book book-3">
-                <p>the war on the west</p>
-                <p>sfrer</p>
-                <p>332</p>
-                <button class="read">read</button>
-                <button class="remove">remove</button>
-            </div>
+            
         </div>
     </section>
 </body>
