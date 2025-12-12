@@ -47,9 +47,21 @@ displayBooks()
 let showFormButton = document.getElementById('showFormButton');
 let bookDialog = document.getElementById('bookDialog');
 let addBookForm = document.getElementById('addBookForm');
+let cancelButton = document.getElementById('cancelForm');
 
 
 showFormButton.addEventListener('click', ()=>{
     bookDialog.showModal();
 })
 
+addBookForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    bookDialog.close();
+    addBookForm.reset();
+})
+
+cancelButton.addEventListener('click', ()=>{
+    bookDialog.close();
+    addBookForm.reset();
+})
