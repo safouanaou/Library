@@ -8,21 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bookContainer">
-        <button id="showFormButton">Add Book</button>
-    </div>
-    <dialog id="bookDialog">
-        <h2>Add Book</h2>
-        <form id="addBookForm" method="dialog">
-            <label for="title">Tile:</label>
-            <input type="text" name="title" id="title" required>
-            <label for="author">Author:</label>
-            <input type="text" name="author" id="author">
-            <button type="submit">Add Book</button>
-            <button type="button" value="cancel" id="cancelForm">Cancel</button>
-        </form>
+    
+    <div class="page">
 
-    </dialog>
+        <div class="buttonContainer">
+            <button id="showFormButton">Add Book</button>
+        </div>
+    
+        <div class="bookDisplayContainer">
+            <div class="bookContainer">
+            
+            </div>
+            
+
+            <dialog id="bookDialog">
+                <h2>Add Book</h2>
+                <form id="addBookForm" method="dialog">
+                    <label for="title">Tile:</label>
+                    <input type="text" name="title" id="title" required>
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="author">
+                    <button type="submit">Add Book</button>
+                    <button type="button" value="cancel" id="cancelForm">Cancel</button>
+                </form>
+            </dialog>
+    </div>
+            
+</div>
+
     
 </body>
 </html>

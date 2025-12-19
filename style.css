@@ -1,3 +1,87 @@
+:root{
+    --background: #ffffff;
+    --surface: #363636;
+    --text-primary: #ffffff;
+    --font-size-primary: 1rem;
+    --font-size-secondary: .8rem;
+    --text-secondary: #d7d7d7;
+}
+
+h1{
+    color: var(--text-primary);
+    font-size: large;
+}
+
+h2{
+    color: var(--text-secondary);
+    font-size: medium;
+}
+
+h3{
+    color: var(--text-primary);
+    font-size: small;
+}
+
+.buttonContainer{
+    width: auto;
+    display: flex;
+}
+
+#showFormButton{
+    width: 200px;
+    border: none;
+    border-radius: 5%;
+    background-color: #363636;
+    padding: 3px 20px 3px 20px;
+    color: var(--text-primary);
+}
+
+.page {
+    font-family: sans-serif;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bookDisplayContainer{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .bookCard {
-    background-color: rgb(253, 236, 236);
+    background-color: var(--surface);
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 3%;
+}
+
+.buttonContainer{
+    width: 20px;
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.bookContainer{
+    width: 80%;
+    display: flex;
+    gap: 10px;
+}
+
+.dark-theme{
+    --background: #222222;
+    --surface: #585858;
+    --text-primary: #ffffff;
+    --text-secondary: #d7d7d7;
 }
