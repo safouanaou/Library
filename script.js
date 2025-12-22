@@ -21,6 +21,7 @@ parentDiv.addEventListener('click', (e)=>{
 
 function addBookToLibrary(title, genre, author){
 
+
     //crypto.randomUUID() generates a random ID
     const newBook = new Book(crypto.randomUUID(), title, genre, author);
 
@@ -67,6 +68,14 @@ function openBookForm(){
     let bookDialog = document.getElementById('bookDialog');
     let addBookForm = document.getElementById('addBookForm');
     let cancelButton = document.getElementById('cancelForm');
+    let bookTitle = document.getElementById('title');
+    let bookAuthor = document.getElementById('author');
+    let bookGenre = document.getElementById('genre');
+    const title = bookTitle.value;
+    const author = bookAuthor.value;
+    const genre = bookGenre.value;
+
+
 
 
     showFormButton.addEventListener('click', ()=>{
@@ -76,14 +85,20 @@ function openBookForm(){
     addBookForm.addEventListener('submit', (e)=>{
         e.preventDefault();
 
+        addBookToLibrary(title, genre, author)
+        displayBooks();
+        
         bookDialog.close();
         addBookForm.reset();
+        
+        
     })
 
     cancelButton.addEventListener('click', ()=>{
         bookDialog.close();
         addBookForm.reset();
     })
+
 }
 
 function removeBook(index){
