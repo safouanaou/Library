@@ -3,6 +3,7 @@ let parentDiv = document.querySelector(".bookContainer");
 
 //book constructor to create book objects
 function Book(id, title, genre, author){
+    this.isRead = false;
     this.id = id;
     this.title = title;
     this.genre = genre;
@@ -15,6 +16,9 @@ parentDiv.addEventListener('click', (e)=>{
     if(e.target.classList.contains('removeBtn')){
         const index = e.target.dataset.index;
         removeBook(index);
+    } else if(e.target.classList.contains('readBtn')){
+        const index = e.target.dataset.index;
+        readBook(index);
     }
 })
 
@@ -28,10 +32,6 @@ function addBookToLibrary(title, genre, author){
     myLibrary.push(newBook)
 
 };
-
-addBookToLibrary("the pragmatic programmer", "non-fiction", "unknown");
-addBookToLibrary("the clean code", "non-fiction", "unknown");
-addBookToLibrary("IT","horror", "Stephen King");
 
 
 function displayBooks(){
@@ -48,7 +48,7 @@ function displayBooks(){
         <h2>${book.genre}</h2>
         <h3>${book.author}<h3>
         <button class="removeBtn" data-index=${index}>remove</button>
-        <button class="readBtn" data-index=${index}>read</button>
+        <button class="readBtn" data-index=${index}>${book.isRead ? "Unread" : "Read"}</button>
         `;
 
         parentDiv.appendChild(card);
@@ -61,8 +61,6 @@ function displayBooks(){
     
 }
 
-
-
 function openBookForm(){
     let showFormButton = document.getElementById('showFormButton');
     let bookDialog = document.getElementById('bookDialog');
@@ -71,11 +69,7 @@ function openBookForm(){
     let bookTitle = document.getElementById('title');
     let bookAuthor = document.getElementById('author');
     let bookGenre = document.getElementById('genre');
-    const title = bookTitle.value;
-    const author = bookAuthor.value;
-    const genre = bookGenre.value;
-
-
+    
 
 
     showFormButton.addEventListener('click', ()=>{
@@ -83,7 +77,14 @@ function openBookForm(){
     })
 
     addBookForm.addEventListener('submit', (e)=>{
+
+        const title = bookTitle.value;
+        const author = bookAuthor.value;
+        const genre = bookGenre.value;
+
         e.preventDefault();
+
+        console.log(title, genre)
 
         addBookToLibrary(title, genre, author)
         displayBooks();
@@ -94,6 +95,7 @@ function openBookForm(){
         
     })
 
+
     cancelButton.addEventListener('click', ()=>{
         bookDialog.close();
         addBookForm.reset();
@@ -101,11 +103,16 @@ function openBookForm(){
 
 }
 
+function readBook(index){
+    myLibrary[index].isRead = !myLibrary[index].isRead;
+    displayBooks();
+}
+
+
 function removeBook(index){
     myLibrary.splice(index, 1);
     displayBooks();
 }
 
-
-displayBooks();
 openBookForm();
+displayBooks();
