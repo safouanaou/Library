@@ -1,14 +1,19 @@
 myLibrary = [];
 let parentDiv = document.querySelector(".bookContainer");
 
-//book constructor to create book objects
-function Book(id, title, genre, author){
-    this.isRead = false;
-    this.id = id;
-    this.title = title;
-    this.genre = genre;
-    this.author = author;
-};
+class Book {
+    constructor(id, title, genre, author) {
+        this.isRead = false;
+        this.id = id;
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+    }
+
+    toggleRead() {
+        this.isRead = !this.isRead;
+    }
+}
 
 //adding one event listener to the parent element using "Event Delegation" method so not to add multiple ones for each child element and cause memory bleeding. 
 //dataset refers to any data attribute on the html elements.
@@ -104,7 +109,7 @@ function openBookForm(){
 }
 
 function readBook(index){
-    myLibrary[index].isRead = !myLibrary[index].isRead;
+    myLibrary[index].toggleRead();
     displayBooks();
 }
 
